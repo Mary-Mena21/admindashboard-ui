@@ -7,6 +7,8 @@ export default function Home() {
         <h1 className="text-5xl font-bold">Admin Dashboard</h1>
       <Button variant="secondary">Click me</Button>
     </div> */}
+      <h1 className="text-5xl font-bold">Admin Dashboard</h1>
+      <Button variant="secondary">Click me</Button>
     </>
   );
 }
