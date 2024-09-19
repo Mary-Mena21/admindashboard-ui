@@ -2,6 +2,15 @@ import cuteUL from '../img/cuteUL.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Avatar, AvatarImage, AvatarFallback } from '@radix-ui/react-avatar';
+// import { DropdownMenu } from '@radix-ui/react-dropdown-menu';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 const Navbar = () => {
   return (
@@ -16,17 +25,31 @@ const Navbar = () => {
         />
       </Link>
       <Link href="/login">Login</Link> | <Link href="/register">Register</Link>
-      <Avatar>
-        {/* <AvatarImage src="https://i.pravatar.cc/150?img=32" />
+      <DropdownMenu>
+        <DropdownMenuTrigger style={{ borderRadius: '50%' }}>
+          {/* <DropdownMenuTrigger className="focus:outline-none"> */}{' '}
+          <Avatar>
+            {/* <AvatarImage src="https://i.pravatar.cc/150?img=32" />
           <AvatarFallback>UL</AvatarFallback> */}
-        <AvatarImage
-          src="https://github.com/shadcn.png"
-          width={40}
-          height={40}
-          style={{ borderRadius: '50%' }}
-        />
-        <AvatarFallback className="text-black">CN</AvatarFallback>
-      </Avatar>
+            <AvatarImage
+              src="https://github.com/shadcn.png"
+              width={40}
+              height={40}
+              style={{ borderRadius: '50%' }}
+            />
+            <AvatarFallback className="text-black">CN</AvatarFallback>
+          </Avatar>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>Profile</DropdownMenuItem>
+          <DropdownMenuItem>Billing</DropdownMenuItem>
+          <DropdownMenuItem>Team</DropdownMenuItem>
+          <DropdownMenuItem>Subscription</DropdownMenuItem>
+          <DropdownMenuItem><Link href="/logout">Logout</Link></DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
     </div>
   );
 };
