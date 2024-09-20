@@ -21,12 +21,14 @@ const Navbar = () => {
           alt="cuteU"
           width={40}
           height={40}
-          style={{ borderRadius: '50%' }}
+          style={{ borderRadius: '50%', border: '2px solid orange' }}
         />
       </Link>
       <Link href="/login">Login</Link> | <Link href="/register">Register</Link>
       <DropdownMenu>
-        <DropdownMenuTrigger style={{ borderRadius: '50%' }}>
+        <DropdownMenuTrigger
+          style={{ borderRadius: '50%', border: '2px solid orange' }}
+        >
           {/* <DropdownMenuTrigger className="focus:outline-none"> */}{' '}
           <Avatar>
             {/* <AvatarImage src="https://i.pravatar.cc/150?img=32" />
@@ -36,7 +38,7 @@ const Navbar = () => {
               width={40}
               height={40}
               style={{ borderRadius: '50%' }}
-            />
+            />      
             <AvatarFallback className="text-black">CN</AvatarFallback>
           </Avatar>
         </DropdownMenuTrigger>
@@ -47,7 +49,9 @@ const Navbar = () => {
           <DropdownMenuItem>Billing</DropdownMenuItem>
           <DropdownMenuItem>Team</DropdownMenuItem>
           <DropdownMenuItem>Subscription</DropdownMenuItem>
-          <DropdownMenuItem><Link href="/logout">Logout</Link></DropdownMenuItem>
+          <DropdownMenuItem>
+            <Link href="/logout">Logout</Link>
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
