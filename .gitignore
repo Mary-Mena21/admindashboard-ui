@@ -34,3 +34,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+//----------------------Youtube------------------------------
+//npm i lucide-react
+//https://ui.shadcn.com/docs/components/command
+//https://www.youtube.com/watch?v=hhudoSMM0yU 
+//Admin Dashboard From Scratch - Next.js, TypeScript, Shadcn/ui
