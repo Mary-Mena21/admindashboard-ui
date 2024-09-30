@@ -1,3 +1,4 @@
+import DashboardCard from '@/components/dashboard/DashboardCard';
 import { Button } from '@/components/ui/button';
 import type { NextPage } from 'next';
 export default function Home() {
@@ -7,7 +8,10 @@ export default function Home() {
         <h1 className="text-5xl font-bold">Admin Dashboard</h1>
       <Button variant="secondary">Click me</Button>
     </div> */}
-      <h1 className="text-5xl font-bold">Admin Dashboard</h1>
+      {/* <h1 className="text-5xl font-bold">Admin Dashboard</h1> */}
+      <div className="flex flex-col md:flex-row justify-between gap-5 mb-5">
+        <DashboardCard />
+      </div>
       <Button variant="secondary">Click me</Button>
     </>
   );
