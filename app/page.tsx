@@ -1,5 +1,6 @@
 import DashboardCard from '@/components/dashboard/DashboardCard';
 import { Button } from '@/components/ui/button';
+import { Folder, MessageCircle, Newspaper, User } from 'lucide-react';
 import type { NextPage } from 'next';
 export default function Home() {
   return (
@@ -10,7 +11,26 @@ export default function Home() {
     </div> */}
       {/* <h1 className="text-5xl font-bold">Admin Dashboard</h1> */}
       <div className="flex flex-col md:flex-row justify-between gap-5 mb-5">
-        <DashboardCard />
+        <DashboardCard
+          title="Posts"
+          count={200}
+          icon={<Newspaper className=" text-slate-500" size={72} />}
+        />
+        <DashboardCard
+          title="Categories"
+          count={12}
+          icon={<Folder className=" text-slate-500" size={72} />}
+        />
+        <DashboardCard
+          title="Users"
+          count={750}
+          icon={<User className=" text-slate-500" size={72} />}
+        />
+        <DashboardCard
+          title="Comments"
+          count={1280}
+          icon={<MessageCircle className=" text-slate-500" size={72} />}
+        />
       </div>
       <Button variant="secondary">Click me</Button>
     </>
