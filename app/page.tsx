@@ -1,6 +1,7 @@
 import DashboardCard from '@/components/dashboard/DashboardCard';
 import { Button } from '@/components/ui/button';
 import { Folder, MessageCircle, Newspaper, User } from 'lucide-react';
+import PostTable from '@/components/posts/PostTable';
 import type { NextPage } from 'next';
 export default function Home() {
   return (
@@ -32,7 +33,8 @@ export default function Home() {
           icon={<MessageCircle className=" text-slate-500" size={72} />}
         />
       </div>
-      <Button variant="secondary">Click me</Button>
+      <PostTable />
+      {/* <Button variant="secondary">Click me</Button> */}
     </>
   );
 }
