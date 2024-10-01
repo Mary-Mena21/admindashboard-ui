@@ -10,7 +10,7 @@ import {
 import Link from 'next/link';
 import posts from '@/data/posts';
 import { Post } from '@/types/posts';
-import { Button } from '../ui/button';
+// import { Button } from '../ui/button';
 interface PostTableProps {
   limit?: number;
   title?: string;

@@ -33,7 +33,7 @@ export default function Home() {
           icon={<MessageCircle className=" text-slate-500" size={72} />}
         />
       </div>
-      <PostTable />
+      {/* <PostTable /> */}
       {/* <Button variant="secondary">Click me</Button> */}
     </>
   );
