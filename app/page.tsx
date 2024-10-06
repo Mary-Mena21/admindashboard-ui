@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Folder, MessageCircle, Newspaper, User } from 'lucide-react';
 import PostTable from '@/components/posts/PostTable';
 import type { NextPage } from 'next';
+import AnalyticsChart from '@/components/dashboard/AnalyticsChart';
 export default function Home() {
   return (
     <>
@@ -33,6 +34,7 @@ export default function Home() {
           icon={<MessageCircle className=" text-slate-500" size={72} />}
         />
       </div>
+      <AnalyticsChart />
       <PostTable />
       {/* <Button variant="secondary">Click me</Button> */}
     </>
