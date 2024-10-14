@@ -1,14 +1,6 @@
 import {
-  Calculator,
-  Calendar,
-  CreditCard,
-  Settings,
-  Smile,
-  User,
-} from 'lucide-react';
-
-import {
   Command,
+  CommandDialog,
   CommandEmpty,
   CommandGroup,
   CommandInput,
@@ -17,25 +9,34 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from '@/components/ui/command';
+import {
+  LayoutDashboard,
+  Newspaper,
+  Folders,
+  CreditCard,
+  Settings,
+  User,
+} from 'lucide-react';
+import Link from 'next/link';
 
-export function Sidebar() {
+const Sidebar = () => {
   return (
-    <Command className="rounded-lg border shadow-md md:min-w-[300px] bg-secondary">
+    <Command className="bg-secondary rounded-none">
       <CommandInput placeholder="Type a command or search..." />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Suggestions">
           <CommandItem>
-            <Calendar className="mr-2 h-4 w-4" />
-            <span>Calendar</span>
+            <LayoutDashboard className="mr-2 h-4 w-4" />
+            <Link href="/">Dashboard</Link>
           </CommandItem>
           <CommandItem>
-            <Smile className="mr-2 h-4 w-4" />
-            <span>Search Emoji</span>
+            <Newspaper className="mr-2 h-4 w-4" />
+            <Link href="/posts">Posts</Link>
           </CommandItem>
-          <CommandItem disabled>
-            <Calculator className="mr-2 h-4 w-4" />
-            <span>Calculator</span>
+          <CommandItem>
+            <Folders className="mr-2 h-4 w-4" />
+            <Link href="#">Categories</Link>
           </CommandItem>
         </CommandGroup>
         <CommandSeparator />
@@ -59,6 +60,6 @@ export function Sidebar() {
       </CommandList>
     </Command>
   );
-}
+};
 
 export default Sidebar;
