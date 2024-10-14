@@ -1,4 +1,4 @@
-// import PostsTable from '@/components/posts/PostsTable';
+// 'use client';
 import BackButton from '@/components/BackButton';
 import PostsPagination from '@/components/posts/PostsPagination';
 import PostsTable from '@/components/posts/PostsTable';
