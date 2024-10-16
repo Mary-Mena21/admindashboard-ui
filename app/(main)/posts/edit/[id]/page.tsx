@@ -16,7 +16,8 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import posts from '@/data/posts';
-import { useToast } from '@/components/ui/use-toast';
+// import { useToast } from '@/components/ui/use-toast';
+import { useToast } from '@/hooks/use-toast';
 
 const formSchema = z.object({
   title: z.string().min(1, {
@@ -63,22 +64,22 @@ const PostEditPage = ({ params }: PostEditPageProps) => {
 
   return (
     <>
-      <BackButton text='Back To Posts' link='/posts' />
-      <h3 className='text-2xl mb-4'>Edit Post</h3>
+      <BackButton text="Back To Posts" link="/posts" />
+      <h3 className="text-2xl mb-4">Edit Post</h3>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(handleSubmit)} className='space-y-8'>
+        <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-8">
           <FormField
             control={form.control}
-            name='title'
+            name="title"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className='uppercase text-xs font-bold text-zinc-500 dark:text-white'>
+                <FormLabel className="uppercase text-xs font-bold text-zinc-500 dark:text-white">
                   Title
                 </FormLabel>
                 <FormControl>
                   <Input
-                    className='bg-slate-100 dark:bg-slate-500 border-0 focus-visible:ring-0 text-black dark:text-white focus-visible:ring-offset-0'
-                    placeholder='Enter Title'
+                    className="bg-slate-100 dark:bg-slate-500 border-0 focus-visible:ring-0 text-black dark:text-white focus-visible:ring-offset-0"
+                    placeholder="Enter Title"
                     {...field}
                   />
                 </FormControl>
@@ -89,18 +90,18 @@ const PostEditPage = ({ params }: PostEditPageProps) => {
 
           <FormField
             control={form.control}
-            name='body'
+            name="body"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className='uppercase text-xs font-bold text-zinc-500 dark:text-white'>
+                <FormLabel className="uppercase text-xs font-bold text-zinc-500 dark:text-white">
                   Body
                 </FormLabel>
                 <FormControl>
-                  {/* <Textarea
-                    className='bg-slate-100 dark:bg-slate-500 border-0 focus-visible:ring-0 text-black dark:text-white focus-visible:ring-offset-0'
-                    placeholder='Enter Body'
+                  <Textarea
+                    className="bg-slate-100 dark:bg-slate-500 border-0 focus-visible:ring-0 text-black dark:text-white focus-visible:ring-offset-0"
+                    placeholder="Enter Body"
                     {...field}
-                  /> */}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -109,16 +110,16 @@ const PostEditPage = ({ params }: PostEditPageProps) => {
 
           <FormField
             control={form.control}
-            name='author'
+            name="author"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className='uppercase text-xs font-bold text-zinc-500 dark:text-white'>
+                <FormLabel className="uppercase text-xs font-bold text-zinc-500 dark:text-white">
                   Author
                 </FormLabel>
                 <FormControl>
                   <Input
-                    className='bg-slate-100 dark:bg-slate-500 border-0 focus-visible:ring-0 text-black dark:text-white focus-visible:ring-offset-0'
-                    placeholder='Enter Author'
+                    className="bg-slate-100 dark:bg-slate-500 border-0 focus-visible:ring-0 text-black dark:text-white focus-visible:ring-offset-0"
+                    placeholder="Enter Author"
                     {...field}
                   />
                 </FormControl>
@@ -129,16 +130,16 @@ const PostEditPage = ({ params }: PostEditPageProps) => {
 
           <FormField
             control={form.control}
-            name='date'
+            name="date"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className='uppercase text-xs font-bold text-zinc-500 dark:text-white'>
+                <FormLabel className="uppercase text-xs font-bold text-zinc-500 dark:text-white">
                   Date
                 </FormLabel>
                 <FormControl>
                   <Input
-                    className='bg-slate-100 dark:bg-slate-500 border-0 focus-visible:ring-0 text-black dark:text-white focus-visible:ring-offset-0'
-                    placeholder='Enter Date'
+                    className="bg-slate-100 dark:bg-slate-500 border-0 focus-visible:ring-0 text-black dark:text-white focus-visible:ring-offset-0"
+                    placeholder="Enter Date"
                     {...field}
                   />
                 </FormControl>
@@ -147,7 +148,7 @@ const PostEditPage = ({ params }: PostEditPageProps) => {
             )}
           />
 
-          <Button className='w-full dark:bg-slate-800 dark:text-white'>
+          <Button className="w-full dark:bg-slate-800 dark:text-white">
             Update Post
           </Button>
         </form>
