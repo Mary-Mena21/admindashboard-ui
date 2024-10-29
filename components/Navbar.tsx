@@ -11,6 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { ThemeToggler } from './ThemeToggler';
 
 const Navbar = () => {
   return (
@@ -25,6 +26,7 @@ const Navbar = () => {
         />
       </Link>
       <Link href="/login">Login</Link> | <Link href="/register">Register</Link>
+      <ThemeToggler />
       <DropdownMenu>
         <DropdownMenuTrigger
           style={{ borderRadius: '50%', border: '2px solid orange' }}
@@ -38,7 +40,7 @@ const Navbar = () => {
               width={40}
               height={40}
               style={{ borderRadius: '50%' }}
-            />      
+            />
             <AvatarFallback className="text-black">CN</AvatarFallback>
           </Avatar>
         </DropdownMenuTrigger>
