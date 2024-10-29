@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
-// import { ThemeProvider } from '@/providers/ThemeProvider';
+
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -36,7 +36,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
-          enableSystem={false}
+          enableSystem={true}
           storageKey="dashboard-theme"
         >
           <Navbar />
