@@ -1,14 +1,21 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import LoginForm from './LoginForm';
+import RegisterForm from './RegisterForm';
 const AuthTabs = () => {
-    return ( <Tabs defaultValue="account" className="w-[400px]">
-        <TabsList>
-          <TabsTrigger value="account">Account</TabsTrigger>
-          <TabsTrigger value="password">Password</TabsTrigger>
-        </TabsList>
-        <TabsContent value="account">Make changes to your account here.</TabsContent>
-        <TabsContent value="password">Change your password here.</TabsContent>
-      </Tabs>
-       );
-}
- 
+  return (
+    <Tabs defaultValue="login" className="w-[400px]">
+      <TabsList className="grid grid-cols-2 w-full">
+        <TabsTrigger value="login">Login</TabsTrigger>
+        <TabsTrigger value="register">Register</TabsTrigger>
+      </TabsList>
+      <TabsContent value="login">
+        <LoginForm />
+      </TabsContent>
+      <TabsContent value="register">
+        <RegisterForm />
+      </TabsContent>
+    </Tabs>
+  );
+};
+
 export default AuthTabs;
