@@ -45,21 +45,29 @@ const PostEditPage = ({ params }: PostEditPageProps) => {
 
   const post = posts.find((post) => post.id === params.id);
 
+  if (!post) {
+    throw new Error(`Post with ID ${params.id} does not exist`);
+  }
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      title: post?.title || '',
-      body: post?.body || '',
-      author: post?.author || '',
-      date: post?.date || '',
+      title: post.title,
+      body: post.body,
+      author: post.author,
+      date: post.date,
     },
   });
 
   const handleSubmit = (data: z.infer<typeof formSchema>) => {
-    toast({
-      title: 'Post has been updated successfully',
-      description: `Updated by ${post?.author} on ${post?.date}`,
-    });
+    try {
+      toast({
+        title: 'Post has been updated successfully',
+        description: `Updated by ${post.author} on ${post.date}`,
+      });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
