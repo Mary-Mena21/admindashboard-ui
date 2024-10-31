@@ -42,7 +42,7 @@ interface PostEditPageProps {
 const PostEditPage = ({ params }: PostEditPageProps) => {
   const { toast } = useToast();
 
-  const post = posts.find((post) => post.id === params.id);
+  const post = posts.find((post) => post.id == params.id);
 
   if (!post) {
     throw new Error(`Post with ID ${params.id} does not exist`);
