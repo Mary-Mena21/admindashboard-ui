@@ -19,6 +19,9 @@ import posts from '@/data/posts';
 import { useToast } from '@/components/ui/use-toast';
 
 const formSchema = z.object({
+  id: z.string().min(1, {
+    message: 'ID is required',
+  }),
   title: z.string().min(1, {
     message: 'Title is required',
   }),
@@ -51,6 +54,7 @@ const PostEditPage = ({ params }: PostEditPageProps) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      id: post.id,
       title: post.title,
       body: post.body,
       author: post.author,
